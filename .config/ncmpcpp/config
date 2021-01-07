@@ -1,0 +1,46 @@
+# mpd
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mpd_music_dir = ~/Music
+
+# Directories for storing ncmpcpp files
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.local/share/lyrics
+
+# Playlist
+playlist_display_mode = "classic" (classic/columns)
+autocenter_mode = "yes"
+centered_cursor = "yes"
+cyclic_scrolling = "yes"
+mouse_list_scroll_whole_page = "no"
+now_playing_prefix = "> $b"
+
+# Bars
+titles_visibility = "yes"
+header_visibility = "no"
+statusbar_visibility = "yes"
+
+# Browser
+browser_playlist_prefix = "$2plist »$0 "
+browser_display_mode = "classic" (classic/columns)
+
+# Colors
+discard_colors_if_item_is_selected = "yes"
+header_window_color = "default"
+volume_color = "yellow"
+state_line_color = "black"
+state_flags_color = "black"
+main_window_color = "default"
+color1 = "black"
+color2 = "magenta"
+progressbar_color = "white"
+statusbar_color = "white"
+visualizer_color = "cyan"
+
+# Others
+progressbar_look = "=>"
+song_window_title_format = "Now playing: {%a > }{%t}|{%f}"
+search_engine_display_mode = "columns" (classic/columns)
+follow_now_playing_lyrics = "yes"
+user_interface = "alternative" (classic/alternative)
+vim:ft=config

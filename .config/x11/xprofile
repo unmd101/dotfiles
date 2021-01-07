@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Set layouts
+setxkbmap -layout us,ru,ua -option grp:ctrl_shift_toggle -variant altgr-intl
+
+# Start on launch
+mpd &
+dunst &
+remaps &
+unclutter &
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources
+xwallpaper --zoom ${XDG_CONFIG_HOME:-$HOME/.config}/wall.jpg

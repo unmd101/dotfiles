@@ -1,0 +1,11 @@
+[Default Applications]
+text/x-shellscript=text.desktop;
+x-scheme-handler/mailto=mail.desktop;
+x-scheme-handler/magnet=torrent.desktop;
+text/plain=text.desktop;
+application/postscript=pdf.desktop;
+application/pdf=pdf.desktop;
+application/x-bittorrent=torrent.desktop;
+image/png=img.desktop;
+image/jpeg=img.desktop;
+image/gif=img.desktop;

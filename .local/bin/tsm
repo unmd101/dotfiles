@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case "$1" in
+	t*)
+		if pidof transmission-daemon >/dev/null ;
+		then
+			[ "$(printf "No\\nYes" | dmenu -i -p "Turn off transmission-daemon?")" = "Yes" ] && killall transmission-da && notify-send "transmission-daemon disabled."
+		else
+			[ "$(printf "No\\nYes" | dmenu -i -p "Turn on transmission daemon?")" = "Yes" ] && transmission-daemon && notify-send "tranmission-daemon enabled."
+		fi ;;
+	o*)
+		! pidof transmission-daemon >/dev/null && transmission-daemon && notify-send "Starting torrent daemon..."
+		$TERMINAL -e tremc; pkill ;;
+	a*)
+		! pidof transmission-daemon >/dev/null && transmission-daemon && notify-send "Starting torrent daemon..." && sleep 3
+		transmission-remote -a "$2" && notify-send "Torrent added" ;;
+	*)
+		sleep 3 && transmission-remote -t ${TR_TORRENT_ID} -r && notify-send "$TR_TORRENT_NAME has completely downloaded."
+esac

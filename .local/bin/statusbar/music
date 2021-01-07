@@ -1,0 +1,15 @@
+#!/bin/sh
+
+filter() {
+mpc -f %title% | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/[P]/g;/\\[playing\\].*/d" | paste -sd ' '; }
+
+pidof -x mpdup >/dev/null 2>&1 || mpdup >/dev/null 2>&1 &
+
+case $BLOCK_BUTTON in
+	1) mpc toggle | filter ;;
+	3) mpc status | filter ; setsid -f "$TERMINAL" -e ncmpcpp ;;
+	4) mpc prev   | filter ;;
+	5) mpc next   | filter ;;
+	6) mpc status | filter ; "$TERMINAL" -e "$EDITOR" "$0" ;;
+	*) mpc status | filter ;;
+esac

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -riv" \
+	mv="mv -iv" \
+	rm="rm -iv" \
+	mkd="mkdir -vp" \
+	yt="pipe-viewer" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	g="git" \
+	sdn="sudo shutdown -h now" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	z="zathura" \
+	p="sudo pacman" \
+	y="yay --nodiffmenu --removemake --cleanafter" \
+	config="git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME"
+	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc" \
+
+alias \
+	magit="nvim -c MagitOnly" \

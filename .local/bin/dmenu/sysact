@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# A dmenu wrapper script for system functions.
+case $1 in
+	shut)
+		prompt "Shutdown computer?" "sudo -A shutdown -h now" ;;
+	reb)
+		prompt "Reboot computer?" "sudo -A shutdown -r now" ;;
+	rest)
+		prompt "Leave dwm?" "kill -TERM $(pgrep -u $USER "\bdwm$")" ;;
+	lock)
+		slock & xset dpms force off; mpc pause; pauseallmpv; amixer sset Master mute; kill -44 $(pidof dwmblocks)
+esac
