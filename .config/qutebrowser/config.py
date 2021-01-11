@@ -46,7 +46,7 @@ c.downloads.remove_finished = 500
 c.tabs.background = True
 c.url.start_pages = ['https://searx.fmac.xyz/']
 c.url.default_page = 'https://searx.fmac.xyz/'
-c.fonts.default_family = "xos4 Terminus"
+c.fonts.default_family = "monospace"
 c.fonts.default_size = "8pt"
 
 # Palette

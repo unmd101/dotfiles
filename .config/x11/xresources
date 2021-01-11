@@ -37,4 +37,4 @@
 *color7:  #a89984
 *color15: #ebdbb2
 
-*.font:	xos4 Terminus:size=9
+*.font:	monospace:size=9
