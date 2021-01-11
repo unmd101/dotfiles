@@ -16,7 +16,7 @@ esac done
 
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/unmd101/rice.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/unmd101/rice/master/.local/share/larbs/progs.csv"
-[ -z "$aurhelper" ] && aurhelper="yay"
+[ -z "$aurhelper" ] && aurhelper="yay-bin"
 [ -z "$repobranch" ] && repobranch="master"
 
 ### FUNCTIONS ###
