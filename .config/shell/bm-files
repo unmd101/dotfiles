@@ -8,7 +8,6 @@ cfb	~/.local/src/dwmblocks/config.h				# dwmblocks: the status bar for dwm
 
 
 # These do not update automatically, but on the next new instance of a program:
-
 cfz	$ZDOTDIR/.zshrc						# zsh (shell) config
 cfv	${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim		# vim/neovim config
 cfa	${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc		# aliases used by zsh (and potentially other shells)
