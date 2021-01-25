@@ -7,7 +7,7 @@ from sys import argv
 from os import path, system
 from requests import post
 
-TOKEN = '1047212216:AAHEOBK6tdqbQxeyVGehIsrY8sURp2U_Gg0'
+TOKEN = ''
 ydl_opts = {
         'noplaylist':True,
         'writethumbnail': True,
