@@ -48,21 +48,19 @@ set completeopt=noinsert,menuone,noselect
 	map <leader>p :!opout <c-r>%<CR><CR>
 	map <leader>c :w! \| !compiler "<c-r>%"<CR>
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
+	map <leader>O :setlocal spell! spelllang=ru_RU<CR>
 	inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 	inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 	set splitright
 
-" Autocmd
 	autocmd BufEnter * call ncm2#enable_for_buffer()
-	autocmd BufWritePre * %s/\s\+$//e
-	autocmd BufWritePre * %s/\n\+\%$//e
 
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
-	autocmd BufWritePre * %s/\s\+$//e
-	autocmd BufWritePre * %s/\n\+\%$//e
+    	autocmd BufWritePre * %s/\n\+\%$//e
+    	autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost bm-files,bm-dirs !shortcuts

@@ -1,6 +1,8 @@
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PROMPT='%F{yellow}%B%2~%b%f %(!.#.%F{white}%B>%b%f) '
+#PROMPT='%F{yellow}%B%2~%b%f %(!.#.%F{white}%B>%b%f) '
+PROMPT='%B%F{cyan}%1~%f%b %# '
+
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments

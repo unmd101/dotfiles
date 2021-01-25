@@ -28,18 +28,18 @@
             ],
             [
                 "urlref:number:braces",
-                "dark blue",
+                "dark magenta",
                 ""
             ],
             [
                 "urlref:number",
-                "dark blue",
+                "dark magenta",
                 ""
             ],
             [
                 "urlref:url",
-                "",
-                ""
+                "dark green",
+                "default"
             ],
             [
                 "url:sel",
@@ -112,10 +112,10 @@
         "7": "digits",
         "8": "digits",
         "9": "digits",
-        "C": "clipboard",
+        "y": "clipboard",
         "c": "context",
         "ctrl l": "clear_screen",
-        "f1": "help_menu",
+        "?": "help_menu",
         "G": "bottom",
         "g": "top",
         "j": "down",

@@ -1,6 +1,5 @@
 config.load_autoconfig()
 
-# Custom Bindings
 config.bind('po', 'spawn linkhandler {url}')
 config.bind('pm', 'spawn ytmd {url}')
 config.bind('pr', 'spawn --userscript readability {url}')
@@ -20,7 +19,6 @@ config.bind('<Ctrl-7>', 'tab-focus 7')
 config.bind('<Ctrl-8>', 'tab-focus 8')
 config.bind('<Ctrl-9>', 'tab-focus -1')
 
-# Search engines
 c.url.searchengines = {'DEFAULT':'https://searx.fmac.xyz/search?q={}',
                        'gh': 'https://github.com/search?q={}',
                        'mv': 'https://movielens.org/explore?q={}',
@@ -30,7 +28,7 @@ c.url.searchengines = {'DEFAULT':'https://searx.fmac.xyz/search?q={}',
                        'rtk': 'https://rutracker.org/forum/tracker.php?nm={}',
                        'trans': 'https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=ru&text={}'
                        }
-# Etc
+
 c.auto_save.session = False
 c.completion.cmd_history_max_items = 10
 c.completion.height = "30%"
@@ -67,7 +65,6 @@ base0D = "#83a598"
 base0E = "#d3869b"
 base0F = "#d65d0e"
 
-# Competition
 c.colors.completion.fg = base05
 c.colors.completion.odd.bg = base00
 c.colors.completion.even.bg = base00
@@ -84,7 +81,6 @@ c.colors.completion.match.fg = base0B
 c.colors.completion.scrollbar.fg = base05
 c.colors.completion.scrollbar.bg = base00
 
-# Downloads
 c.colors.downloads.bar.bg = base00
 c.colors.downloads.start.fg = base00
 c.colors.downloads.start.bg = base0D
@@ -92,7 +88,6 @@ c.colors.downloads.stop.fg = base00
 c.colors.downloads.stop.bg = base0C
 c.colors.downloads.error.fg = base08
 
-# Hints
 c.colors.hints.fg = base00
 c.colors.hints.bg = base0A
 c.colors.hints.match.fg = base05
@@ -100,7 +95,6 @@ c.colors.keyhint.fg = base05
 c.colors.keyhint.suffix.fg = base05
 c.colors.keyhint.bg = base00
 
-# Messages
 c.colors.messages.error.fg = base00
 c.colors.messages.error.bg = base08
 c.colors.messages.error.border = base08
@@ -111,13 +105,11 @@ c.colors.messages.info.fg = base05
 c.colors.messages.info.bg = base00
 c.colors.messages.info.border = base00
 
-# Prompts
 c.colors.prompts.fg = base05
 c.colors.prompts.border = base00
 c.colors.prompts.bg = base00
 c.colors.prompts.selected.bg = base0A
 
-# Statusbar
 c.colors.statusbar.normal.fg = base0B
 c.colors.statusbar.normal.bg = base00
 c.colors.statusbar.insert.fg = base00
@@ -142,7 +134,6 @@ c.colors.statusbar.url.success.http.fg = base0C
 c.colors.statusbar.url.success.https.fg = base0B
 c.colors.statusbar.url.warn.fg = base0E
 
-# Tabs
 c.colors.tabs.bar.bg = base00
 c.colors.tabs.indicator.start = base0D
 c.colors.tabs.indicator.stop = base0C
@@ -164,6 +155,5 @@ c.colors.tabs.selected.odd.bg = base00
 c.colors.tabs.selected.even.fg = base05
 c.colors.tabs.selected.even.bg = base00
 
-# Tab padding
 c.tabs.padding = {"bottom": 1, "left": 5, "right": 5, "top": 1}
-c.tabs.favicons.scale = 1
+c.tabs.favicons.scale = 0.9

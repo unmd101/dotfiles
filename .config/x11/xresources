@@ -2,7 +2,7 @@
 *foreground:  #ebdbb2
 *cursorColor: #ebdbb2
 
-! dwm/dmenu
+! dwm/dmenu fg
 *.dforeground:	#f4ecd7
 
 ! Black + DarkGrey
@@ -37,4 +37,5 @@
 *color7:  #a89984
 *color15: #ebdbb2
 
-*.font:	monospace:size=9
+!*.font:	monospace:size=10
+Xft.dpi: 95.8983

@@ -9,5 +9,5 @@ case $1 in
 	rest)
 		prompt "Leave dwm?" "kill -TERM $(pgrep -u $USER "\bdwm$")" ;;
 	lock)
-		slock & xset dpms force off; mpc pause; pauseallmpv; amixer sset Master mute; kill -44 $(pidof dwmblocks)
+		slock & xset dpms force off; mpc pause
 esac

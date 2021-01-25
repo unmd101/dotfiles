@@ -1,18 +1,14 @@
-# -- general
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 auto-reload no
 goto-next-feed no
 max-items 15
+reload-threads 40
+text-width 120
 history-limit 0
 notify-always no
 notify-program "/usr/bin/notify-send"
 
-# -- filter
-ignore-mode "display"
-ignore-article "*" "title =~ \"R to\""
-ignore-article "*" "title =~ \"RT by\""
-
-# -- formatting
+# formatting
 notify-format "Newsboat finished updating.\n %d new unread articles"
 datetime-format           "%b %d"
 feedlist-title-format     " Feed (%u feeds unreaded)"
@@ -21,7 +17,7 @@ feedlist-format           " %-6T %-50t (%U New)"
 articlelist-format        "%3f %-8D %t"
 itemview-title-format     " %T"
 
-# -- bindings
+# bindings
 bind-key h quit
 bind-key j down
 bind-key k up
@@ -42,28 +38,25 @@ bind-key t toggle-show-read-feeds
 bind-key x delete-article
 bind-key SPACE macro-prefix
 
-# -- macroses
+# macroses
 browser linkhandler
-macro w set browser "readability %u | elinks" ; open-in-browser ; toggle-article-read ; set browser linkhandler
 macro y set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler
-macro c set browser "clear && youtube-viewer --comments=%u" ; open-in-browser ; set browser linkhandler
+macro c set browser "clear && pipe-viewer --comments=%u" ; open-in-browser ; set browser linkhandler
 
-# -- colors
+# colors
 color info black white reverse
 color listnormal default default
 color listnormal_unread blue default
 color listfocus yellow default
 color listfocus_unread yellow default
+
+# highlights
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
-highlight article "(^Feed:.*|^Title:.*)" cyan default bold
-highlight article "(^Link:.*|^Date:.*)" default default
+highlight article "(^Feed:*)" cyan default
+highlight article "(^Title:.*)" blue default
 highlight article "(^Author:*)" yellow default
+highlight article "(^Date:*)" magenta default
+highlight article "(^Link:)" green default
 highlight article "https?://[^ ]+" green default
-highlight article "^(Title):.*$" blue default
-highlight article "\\[[0-9][0-9]*\\]" magenta default bold
-highlight article "\\[image\\ [0-9]+\\]" green default bold
-highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
-highlight article ":.*\\(link\\)$" cyan default
-highlight article ":.*\\(image\\)$" blue default
-highlight article ":.*\\(embedded flash\\)$" magenta default
+highlight article "\\[[0-9]+\\]" magenta default

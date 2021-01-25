@@ -4,6 +4,7 @@
 setxkbmap -layout us,ru,ua -option grp:ctrl_shift_toggle -variant altgr-intl
 
 # Start on launch
+set-dpi &
 mpd &
 dunst &
 remaps &
