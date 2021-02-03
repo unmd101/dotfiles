@@ -1,4 +1,4 @@
-config.load_autoconfig()
+config.load_autoconfig(False)
 
 config.bind('po', 'spawn linkhandler {url}')
 config.bind('pm', 'spawn ytmd {url}')
@@ -36,9 +36,9 @@ c.completion.scrollbar.width = 12
 c.confirm_quit = ['downloads']
 c.content.geolocation = False
 c.content.ssl_strict = True
-c.content.host_blocking.enabled = True
 c.content.mouse_lock = False
 c.content.notifications = False
+c.content.blocking.enabled = True
 c.downloads.location.prompt = False
 c.downloads.remove_finished = 500
 c.tabs.background = True
