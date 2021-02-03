@@ -1,59 +1,23 @@
 #!/bin/sh
 
-MIXER="default"
-
-# The instance option sets the control to report and configure
-# This defaults to the first control of your selected mixer
-# For a list of the available, use `amixer -D $Your_Mixer scontrols`
-if [[ -z "$SCONTROL" ]] ; then
-    SCONTROL="${BLOCK_INSTANCE:-$(amixer -D $MIXER scontrols |
-                      sed -n "s/Simple mixer control '\([^']*\)',0/\1/p" |
-                      head -n1
-                    )}"
-fi
-
-if [[ -z "$STEP" ]] ; then
-    STEP="${1:-5%}"
-fi
-
-NATURAL_MAPPING=${NATURAL_MAPPING:-0}
-if [[ "$NATURAL_MAPPING" != "0" ]] ; then
-    AMIXER_PARAMS="-M"
-fi
-
-capability() { # Return "Capture" if the device is a capture device
-  amixer $AMIXER_PARAMS -D $MIXER get $SCONTROL |
-    sed -n "s/  Capabilities:.*cvolume.*/Capture/p"
-}
-
-volume() {
-  amixer $AMIXER_PARAMS -D $MIXER get $SCONTROL $(capability)
-}
-
-format() {
-  perl_filter='if (/.*\[(\d+%)\] (\[(-?\d+.\d+dB)\] )?\[(on|off)\]/)'
-  perl_filter+='{CORE::say $4 eq "off" ? "Muted" : "'
-  # If dB was selected, print that instead
-  perl_filter+=$([[ $STEP = *dB ]] && echo '$3' || echo '$1')
-  perl_filter+='"; exit}'
-  output=$(perl -ne "$perl_filter")
-  if [ "$output" == "Muted" ]; then
-  	  icon=""
-  elif [ "${output%?}" -gt "70" ]; then
-  	  icon=""
-  elif [ "${output%?}" -lt "30" ]; then
-  	  icon=""
-  else
-  	  icon=""
-  fi
-  printf "%s%s" "$icon" "$output"
-}
-
 case $BLOCK_BUTTON in
-  1) amixer $AMIXER_PARAMS -q -D $MIXER sset $SCONTROL $(capability) toggle ;;  # right click, mute/unmute
-  3) setsid -f "$TERMINAL" -e alsamixer ;;
-  4) amixer $AMIXER_PARAMS -q -D $MIXER sset $SCONTROL $(capability) ${STEP}+ unmute ;; # scroll up, increase
-  5) amixer $AMIXER_PARAMS -q -D $MIXER sset $SCONTROL $(capability) ${STEP}- unmute ;; # scroll down, decrease
+	1) pamixer -t ;;
+	3) setsid -f "$TERMINAL" -e pulsemixer ;;
+	4) pamixer --allow-boost -i 1 ;;
+	5) pamixer --allow-boost -d 1 ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-volume | format
+[ $(pamixer --get-mute) = true ] && echo Muted && exit
+
+vol="$(pamixer --get-volume)"
+
+if [ "$vol" -gt "70" ]; then
+	icon=""
+elif [ "$vol" -lt "30" ]; then
+	icon=""
+else
+	icon=""
+fi
+
+echo "$icon$vol%"
