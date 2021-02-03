@@ -14,20 +14,21 @@ export READER="zathura"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
-export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export HISTFILE="$XDG_DATA_HOME/history"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export INPUTRC="$XDG_CONFIG_HOME/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export XDG_DATA_HOME="$HOME/.local/share"
-export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
-export XAUTHORITY="$XDG_CONFIG_HOME/x11/xauthority"
-export XDG_CACHE_HOME="$HOME/.cache"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export LESSHISTFILE="-"
 
 # Other program settings:
-export SUDO_ASKPASS=dmenupass
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
@@ -47,4 +48,4 @@ export WINEPREFIX=$HOME/.local/share/wineprefixes/default
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
 
 # Switch escape and caps if tty:
-sudo -n loadkeys ${XDG_DATA_HOME:-$HOME/.local/share}/ttymaps.kmap 2>/dev/null
+sudo -n loadkeys $XDG_DATA_HOME/ttymaps.kmap 2>/dev/null
