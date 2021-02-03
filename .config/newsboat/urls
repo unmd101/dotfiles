@@ -1,6 +1,7 @@
 "/g/" "(---)"
 https://lukesmith.xyz/rss.xml "(www)"
 http://suckless.org/atom.xml "(www)" "~skls"
+https://archlinux.org/feeds/news/ "(www)" "~BTW"
 https://www.opennet.ru/opennews/opennews_all.rss "(www)" "~OpenNet"
 https://drewdevault.com/blog/index.xml "(www)" "~Drew DeVault"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "(ytb)"
@@ -8,6 +9,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg "(y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "(ytb)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA "(ytb)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCw-37SPkb2az4_m6Jrf2RUQ "(ytb)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA "(ytb)"
 
 "NEWS & PPL" "(---)"
 https://boards.4channel.org/news/index.rss "(www)" "~4ch"
@@ -30,6 +32,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCeV6mvmLCcWULUN9kkH6-CA "(y
 https://www.youtube.com/feeds/videos.xml?channel_id=UC8GoduxspzU7MpKYdbMyI0A "(ytb)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCWjEiMNZv4g3P9BWbrtMjyA "(ytb)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC1BMFYZxc1pBWw6bUnYkorw "(ytb)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJLorkdDK41pOQyoVQbFqJQ "(ytb)"
 
 "G STANDS FOR GAMER" "(---)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCfdgIq01iG92AXBt-NxgPkg "(ytb)"
